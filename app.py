@@ -27,7 +27,7 @@ def promotion():
 
 @app.route('/image_mars')
 def image_mars():
-    return render_template('image_mars')
+    return render_template('image_mars.html')
 
 
 @app.route('/promotion_image')
