@@ -23,5 +23,20 @@ def prof_list(params):
     return render_template('list_prof.html', params=params, list1=list_prof)
 
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def answer():
+    params = {}
+    params['title'] = 'Анкета'
+    params['surname'] = 'Watny'
+    params['name'] = 'Mark'
+    params['education'] = 'выше среднего'
+    params['profession'] = 'штурман марсохода'
+    params['sex'] = 'male'
+    params['motivation'] = 'Всегда мечтал застрять на Марсе'
+    params['ready'] = 'True'
+    return render_template('auto_answer.html', data=params)
+
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080)
