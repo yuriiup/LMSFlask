@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{profession}}</title>
+</head>
+<body>
+<h1>
+    Миссия колонизации Марса
+</h1>
+<h4>
+    И на Марсе будут яблони цвести!
+</h4>
+{% if profession == 'врач' %}
+    <h1 style="text-align:center;">Научные стимуляторы</h1>
+    <div class="image" style="text-align: center;">
+    <img src="/static/img/sci.png">
+    </div>
+{% else %}
+    <h1 style="text-align:center;">Инженерные тренажеры</h1>
+    <div class="image" style="text-align: center;">
+    <img src="/static/img/ing.png">
+    </div>
+{% endif %}
+</body>
+</html>
