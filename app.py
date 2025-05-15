@@ -10,7 +10,16 @@ def index(title):
 
 @app.route('/traning/<profession>')
 def prof(profession):
-    return render_template('traning.html', profession=profession)
+    return render_template('list_prof.html', profession=profession)
+
+
+@app.route('/list_prof/<params>')
+def prof_list(params):
+    if params != 'ol' and params != 'ul':
+        return 'Неверный параметер'
+    list_prof = ['Инженер', 'Врач', 'Офицер безопастности', 'Капитан',
+                 'Штурман', 'Биолог', 'Психолог', 'Механик', 'Электрик']
+    return render_template('list_prof.html', params=params, list1=list_prof)
 
 
 if __name__ == '__main__':
