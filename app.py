@@ -45,7 +45,7 @@ def answer():
 class LoginForm(FlaskForm):
     id_astronaut = StringField('id астронавта', validators=[DataRequired()])
     password = PasswordField('Пароль астронавта', validators=[DataRequired()])
-    id_capitan = StringField('Запомнить меня', validators=[DataRequired()])
+    id_capitan = StringField('id капитана', validators=[DataRequired()])
     password_capitan = PasswordField('Пароль капитана', validators=[DataRequired()])
 
 
