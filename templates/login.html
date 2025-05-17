@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-    form
-    {
-    position: relative;
-    bottom: -20px
-    }
-</style>
-    <form action="" method="post" novalidate>
-        <img src="/static/img/ing.png">
+    <style>
+        flex { display: flex; flex-direction: column; }
+    </style>
+    <div style="position: relative; top: 20px; right: 200px;">
+        <img src="/static/img/MARS-2-7.png">
+            <h2 class="element" style="position: relative; top: -40px; left: 150px;">Аварийный доступ</h2>
+    </div>
+    <form action="" method="post" novalidate style="position: relative; right: 200px">
         <div>
             {{ form.csrf_token }}
         </div>
         {% for field in form if field.name != 'csrf_token' %}
-            <div>
+            <div style="margin-bottom: 30px; ">
                 {{ field.label() }}
-                {{ field() }}
-                {% for error in field.errors %}
+                <div id="flex">
+                    {{ field() }}
+                    {% for error in field.errors %}
                     <div class="error">{{ error }}</div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         {% endfor %}
     </form>

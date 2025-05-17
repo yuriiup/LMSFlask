@@ -42,13 +42,19 @@ def answer():
     return render_template('auto_answer.html', data=params)
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        return redirect('/success')
+    return render_template('login.html', title='Аварийный доступ', form=form)
+
+
 class LoginForm(FlaskForm):
-    username = StringField('Логин', validators=[DataRequired()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    remember_me = BooleanField('Запомнить меня')
-    submit = SubmitField('Войти')
-
-
+    id_astronaut = StringField('id астронавта', validators=[DataRequired()])
+    password = PasswordField('Пароль астронавта', validators=[DataRequired()])
+    id_capitan = StringField('Запомнить меня', validators=[DataRequired()])
+    password_capitan = PasswordField('Пароль капитана', validators=[DataRequired()])
 
 
 if __name__ == '__main__':
