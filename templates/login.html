@@ -13,15 +13,16 @@
             {{ form.csrf_token }}
         </div>
         {% for field in form if field.name != 'csrf_token' %}
-            <div style="margin-bottom: 30px; ">
+            <div style="margin-bottom: 50px;">
                 {{ field.label() }}
-                <div id="flex">
+                 <div id="flex" style="margin-bottom: 50px;">
                     {{ field() }}
                     {% for error in field.errors %}
-                    <div class="error">{{ error }}</div>
+                     <div class="error">{{ error }}</div>
                     {% endfor %}
-                </div>
-            </div>
+                 </div>
         {% endfor %}
+            </div>
+        <button type="submit" class="btn btn-primary">Доступ</button>
     </form>
 {% endblock %}

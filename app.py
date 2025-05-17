@@ -42,19 +42,26 @@ def answer():
     return render_template('auto_answer.html', data=params)
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        return redirect('/success')
-    return render_template('login.html', title='Аварийный доступ', form=form)
-
-
 class LoginForm(FlaskForm):
     id_astronaut = StringField('id астронавта', validators=[DataRequired()])
     password = PasswordField('Пароль астронавта', validators=[DataRequired()])
     id_capitan = StringField('Запомнить меня', validators=[DataRequired()])
     password_capitan = PasswordField('Пароль капитана', validators=[DataRequired()])
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    button = SubmitField('Доступ')
+    if form.validate_on_submit():
+        return 'done!'
+    return render_template('login.html', title='Аварийный доступ', form=form, button=button)
+
+
+@app.route('/distribution')
+def distribution():
+    data = ['Ридли Скотт', 'Энди Уир', 'Марк Уотни', 'Венката Капур']
+    return render_template('distribution.html', data=data)
 
 
 if __name__ == '__main__':
