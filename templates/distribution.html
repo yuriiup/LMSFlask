@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title></title>
+<style>
+    flex { display: flex; flex-direction: column; }
+</style>
+   <h3 style="align:left; top: -30px; margin-bottom: 30px;">Размещение по каютам</h3>
+    <form class="block" style="align:left">
+        {% for astronaut in data %}
+        <div><ol>{{ astronaut }} - Каюта№{{ loop.index }}  {% if loop.first %} - капитан корабля {% endif %}</ol></div>
+        {% endfor %}
+    </form>
+
+{% endblock %}
