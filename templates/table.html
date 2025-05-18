@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title></title>
+<h2 style="text-align: center; top: -30px; margin-bottom: 30px;">Размещение по каютам</h2>
+{% if sex == 'male' and old < 21 %}
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Цвет стен</th>
+        <th>Эмблема</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="width: 500px; height: 500px;" bgcolor="#b4ceff"></td>
+        <td> <img style="width: 500px; height: 500px;" src="/static/img/marsianin_small.png"></td>
+      </tr>
+    </tbody>
+  </table>
+{% elif sex == 'female' and old < 21 %}
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Цвет стен</th>
+        <th>Эмблема</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="width: 500px; height: 500px;" bgcolor="#ffb9b4"></td>
+        <td> <img style="width: 500px; height: 500px;" src="/static/img/marsianin_small.png"></td>
+      </tr>
+    </tbody>
+  </table>
+{% elif sex == 'male' and old > 21 %}
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Цвет стен</th>
+        <th>Эмблема</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="width: 500px; height: 500px;" bgcolor="#1944b3"></td>
+        <td> <img style="width: 500px; height: 500px;" src="/static/img/marsianin_big.png"></td>
+      </tr>
+    </tbody>
+  </table>
+{% elif sex == 'female' and old > 21 %}
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Цвет стен</th>
+        <th>Эмблема</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="width: 500px; height: 500px;" bgcolor="#cc3918"></td>
+        <td> <img style="width: 500px; height: 500px;" src="/static/img/marsianin_big.png"></td>
+      </tr>
+    </tbody>
+  </table>
+{% endif %}
+
+{% endblock %}
