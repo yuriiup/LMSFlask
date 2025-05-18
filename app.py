@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
+import os
+import json
+import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -67,6 +70,15 @@ def distribution():
 @app.route('/table/<sex>/<old>')
 def table(sex, old):
     return render_template('table.html', sex=sex, old=int(old))
+
+
+@app.route('/member')
+def members_in_ship():
+    data = os.path.join(app.root_path, 'templates', 'member.json')
+    with open(data, encoding='utf-8') as f:
+        members = json.load(f)
+    random_member = random.choice(members)
+    return render_template('member.html', member=random_member)
 
 
 if __name__ == '__main__':

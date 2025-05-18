@@ -1,0 +1,20 @@
+[
+    {
+        "first_name": "Иван",
+        "last_name": "Иванов",
+        "photo_url": "/static/img/IVAN.jpg",
+        "profession": ["капитан", "штурман"]
+    },
+    {
+        "first_name": "Анна",
+        "last_name": "Петрова",
+        "photo_url": "/static/img/ANNA.jpg",
+        "profession": ["инженер", "навигатор"]
+    },
+    {
+        "first_name": "Сергей",
+        "last_name": "Кузнецов",
+        "photo_url": "/static/img/SERGEI.jpg",
+        "profession": ["бортмеханик", "астроном"]
+    }
+]
