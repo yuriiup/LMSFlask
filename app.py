@@ -64,5 +64,10 @@ def distribution():
     return render_template('distribution.html', data=data)
 
 
+@app.route('/table/<sex>/<old>')
+def table(sex, old):
+    return render_template('table.html', sex=sex, old=int(old))
+
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080)
